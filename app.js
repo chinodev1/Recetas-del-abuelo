@@ -2414,17 +2414,21 @@ function updateIngredientes(ratio) {
 /* ──────────────────────────────────────────────
    5. FILTER
 ────────────────────────────────────────────── */
+function norm(str) {
+  return (str || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
+
 function filtrar() {
-  const q = currentSearch.toLowerCase().trim();
+  const q = norm(currentSearch.trim());
   return [...RECETAS, ...CUSTOM].filter(r => {
     let matchCat;
     if      (currentCat === 'todas')     matchCat = true;
     else if (currentCat === 'favoritas') matchCat = FAVORITES.has(r.id);
     else                                 matchCat = r.categoria === currentCat;
     const matchQ = !q
-      || r.titulo.toLowerCase().includes(q)
-      || (r.descripcion || '').toLowerCase().includes(q)
-      || r.ingredientes.some(i => i.toLowerCase().includes(q));
+      || norm(r.titulo).includes(q)
+      || norm(r.descripcion).includes(q)
+      || r.ingredientes.some(i => norm(i).includes(q));
     return matchCat && matchQ;
   });
 }
