@@ -1254,6 +1254,57 @@ const RECETAS = [
   },
 
   {
+    id: 'tortilla-francesa',
+    titulo: 'Tortilla Francesa',
+    categoria: 'basicos',
+    emoji: '🍳',
+    img: 'https://images.pexels.com/photos/6261370/pexels-photo-6261370.jpeg?auto=compress&cs=tinysrgb&w=980&h=500&fit=crop',
+    tiempo: '5 min',
+    porciones: '1 persona',
+    dificultad: 'Fácil',
+    descripcion: 'La preparación más simple de la cocina y, bien hecha, una de las más elegantes. Tres huevos, manteca y sal. El secreto no está en los ingredientes sino en el fuego, la sartén y el movimiento — cremosa por dentro, apenas dorada por fuera.',
+    ingredientes: [
+      '3 huevos',
+      '1 cda. de manteca',
+      'Sal a gusto',
+      'Pimienta negra (opcional)',
+      '— Para rellenar (opcional) —',
+      'Queso cremoso o en fetas',
+      'Jamón cocido',
+      'Ciboulette o perejil fresco picado',
+    ],
+    pasos: [
+      {
+        titulo: 'Batir los huevos',
+        texto: 'Rompé los 3 huevos en un bol. Agregá sal (y pimienta si usás). Batí con un tenedor de forma enérgica durante 30–40 segundos hasta que las yemas y las claras estén completamente integradas y la mezcla sea de color uniforme. No tiene que formar espuma — solo una mezcla lisa y fluida.'
+      },
+      {
+        titulo: 'Calentar la sartén',
+        texto: 'Usá una sartén antiadherente de 20–22 cm. Calentala a fuego medio-alto durante 1 minuto. Para probar la temperatura: tirá una gotita de agua — si chisporrotea y se evapora de inmediato, está lista. Si humea demasiado, bajá el fuego.'
+      },
+      {
+        titulo: 'La manteca espumante',
+        texto: 'Agregá la manteca. Tiene que derretirse rápido y formar espuma pero sin ponerse marrón. Cuando la espuma empiece a bajar, ese es el momento exacto de agregar los huevos.'
+      },
+      {
+        titulo: 'Cocinar con movimiento constante',
+        texto: 'Vertí los huevos batidos de golpe. Con una espátula de silicona, hacé movimientos rápidos y continuos — como si estuvieras revolviendo en pequeños círculos o empujando desde los bordes hacia el centro. Mové la sartén también. El objetivo: que los huevos se cocinen de forma pareja y queden cremosos, no resecos. Todo este paso dura apenas 60–90 segundos.'
+      },
+      {
+        titulo: 'El relleno y el pliegue',
+        texto: 'Cuando la tortilla todavía está ligeramente húmeda en el centro (¡no la sobrecocines!), agregá el relleno sobre la mitad. Incliná la sartén y usá la espátula para plegar la mitad sin relleno sobre la mitad con relleno. Deslizá al plato con un movimiento suave — la tortilla tiene que quedar ovalada y cerrada.'
+      }
+    ],
+    tips: [
+      'La sartén tiene que estar caliente: si los huevos no chisporrotean al caer, la sartén está fría y la tortilla queda gomosa.',
+      'No sobrecocinar: el interior tiene que quedar ligeramente húmedo y cremoso. Se termina de cocinar con el calor residual.',
+      'Manteca, no aceite: la manteca aporta sabor y el punto espumante es la clave de la temperatura correcta.',
+      'Batido enérgico: 30 segundos mínimo para romper bien la yema y obtener una mezcla uniforme.',
+      'Para doble porción, mejor hacer dos tortillas de a una que una grande — es más fácil de manejar.'
+    ]
+  },
+
+  {
     id: 'chimichurri',
     titulo: 'Chimichurri',
     categoria: 'salsas',
@@ -1591,6 +1642,104 @@ const RECETAS = [
       'El truco del freezer enfría la papa rápido para que los huevos no se cuezan al mezclar.',
       'Fuego bajo y tapada: se cocina parejo sin quemarse.',
       'El vuelta se hace con una tabla o plato grande para no romperla.'
+    ]
+  },
+
+  {
+    id: 'pure-papa',
+    titulo: 'Puré de Papa',
+    categoria: 'guarniciones',
+    emoji: '🥔',
+    img: 'https://images.pexels.com/photos/3735243/pexels-photo-3735243.jpeg?auto=compress&cs=tinysrgb&w=980&h=500&fit=crop',
+    tiempo: '35 min',
+    porciones: '4 personas',
+    dificultad: 'Fácil',
+    descripcion: 'El acompañamiento más clásico de la cocina argentina. Papas pisadas en caliente con manteca generosa y leche entera tibia — cremoso, suave y sin un solo grumo. El secreto está en la temperatura y en nunca usar mixer.',
+    ingredientes: [
+      '1 kg de papas (Spunta o similares)',
+      '80 g de manteca',
+      '150–200 ml de leche entera',
+      '1 cdita. de sal gruesa (para el agua de cocción)',
+      'Sal fina y pimienta blanca a gusto',
+      'Nuez moscada recién rallada (opcional)',
+    ],
+    pasos: [
+      {
+        titulo: 'Cocinar las papas',
+        texto: 'Pelá las papas y cortalasen cuartos de tamaño similar para que se cocinen parejo. Ponelas en una olla, cubrí con agua fría y agregá la sal gruesa. Llevá a hervor a fuego fuerte, luego bajá a fuego medio-alto y cociná 18–22 minutos. Están listas cuando un tenedor entra sin resistencia.'
+      },
+      {
+        titulo: 'Calentar la leche',
+        texto: 'Mientras las papas se cocinan, calentá la leche en una ollita o en el microondas hasta que esté bien tibia (no hace falta que hierva). Esto es clave: la leche fría corta el calor y arruina la textura.'
+      },
+      {
+        titulo: 'Escurrir y secar',
+        texto: 'Colá las papas y volvelas a la olla caliente vacía. Dejá que reposen 1–2 minutos sobre el fuego apagado, moviéndolas suavemente. Este paso evapora el exceso de humedad y es lo que hace que el puré no quede aguado.'
+      },
+      {
+        titulo: 'Pisar en caliente',
+        texto: 'Con las papas todavía muy calientes, usá un pisapapas o un pasapurés. Agregá toda la manteca de una sola vez y pisá hasta integrar. La manteca se derrite dentro de la papa y crea la base cremosa. Nunca uses mixer ni licuadora — el almidón se activa y el puré queda chicloso.'
+      },
+      {
+        titulo: 'Incorporar la leche',
+        texto: 'Agregá la leche tibia de a poco, integrando con movimientos envolventes con una cuchara de madera o espátula. Ajustá la cantidad según la textura que preferís: menos leche para un puré más espeso, más para uno más fluido. Condimentá con sal fina, pimienta blanca y nuez moscada si usás.'
+      }
+    ],
+    tips: [
+      'NUNCA mixer ni licuadora: el almidón se vuelve pegajoso y el puré queda gomoso.',
+      'Leche siempre tibia: la leche fría baja la temperatura y corta la cremosidad.',
+      'Manteca de buena calidad hace toda la diferencia.',
+      'Para un puré más rico todavía: reemplazá parte de la leche por crema de leche.',
+      'Si el puré quedó demasiado espeso, agregá más leche tibia de a cucharadas.'
+    ]
+  },
+
+  {
+    id: 'pure-zapallo',
+    titulo: 'Puré de Zapallo',
+    categoria: 'guarniciones',
+    emoji: '🎃',
+    img: 'https://images.pexels.com/photos/5718052/pexels-photo-5718052.jpeg?auto=compress&cs=tinysrgb&w=980&h=500&fit=crop',
+    tiempo: '40 min',
+    porciones: '4 personas',
+    dificultad: 'Fácil',
+    descripcion: 'Suave, dulce y con ese color naranja intenso que llena el plato. El zapallo anco asado concentra su sabor mejor que hervido, y con manteca, queso rallado y nuez moscada se convierte en un acompañamiento que le roba el show a la carne.',
+    ingredientes: [
+      '1 kg de zapallo anco (o coreano)',
+      '50 g de manteca',
+      '50 g de queso rallado tipo parmesano o sardo',
+      '½ cdita. de nuez moscada rallada',
+      'Sal y pimienta negra a gusto',
+      '3–4 cdas. de leche entera (si fuera necesario)',
+    ],
+    pasos: [
+      {
+        titulo: 'Cocinar el zapallo',
+        texto: 'Cortá el zapallo en trozos grandes, sacale las semillas y las fibras del centro. Tenés dos opciones:\n\n**Al horno (recomendado):** Poné los trozos con la piel hacia arriba en una asadera, sin agua ni aceite. Cociná a 200 °C durante 35–40 minutos hasta que estén completamente tiernos. El horno evapora el agua y concentra el sabor.\n\n**Hervido:** Si no tenés tiempo, pelá el zapallo, cortalo en cubos y herví en agua con sal 15–20 minutos. Colá muy bien y procedé a secarlo en la sartén antes de pisar.'
+      },
+      {
+        titulo: 'Retirar la pulpa',
+        texto: 'Una vez frío para poder manipularlo, separás la pulpa de la piel con una cuchara. La piel se descarta.'
+      },
+      {
+        titulo: 'Secar en la sartén',
+        texto: 'Ponés la pulpa en una sartén grande a fuego medio y la cocinás 4–5 minutos revolviendo constantemente. El zapallo tiene mucha agua — este paso es fundamental para que el puré no quede líquido. Cuando empiece a despegarse de la sartén y la textura sea más compacta, está listo.'
+      },
+      {
+        titulo: 'Pisar y condimentar',
+        texto: 'Fuera del fuego, pisá bien con un pisapapas o pasapurés hasta obtener una textura lisa. Agregá la manteca y el queso rallado. Mezclá con movimientos envolventes hasta que todo esté integrado y el queso se derrita. Condimentá con sal, pimienta y nuez moscada.'
+      },
+      {
+        titulo: 'Ajustar textura',
+        texto: 'Si el puré quedó demasiado espeso, agregá leche tibia de a cucharadas hasta la textura deseada. Probá y ajustá sal. Servilo caliente.'
+      }
+    ],
+    tips: [
+      'Horno > hervido: el horno evapora el agua y el sabor del zapallo se concentra muchísimo más.',
+      'Secar en sartén antes de pisar es el paso que más diferencia hace — si lo salteás, el puré queda líquido.',
+      'El queso sardo o parmesano le da profundidad; con cremoso queda más suave y lácteo.',
+      'Combina perfecto con pollo al horno, carnes braseadas o milanesas.',
+      'Aguanta bien en la heladera 2–3 días; recalentá con un chorrito de leche y manteca.'
     ]
   },
 
