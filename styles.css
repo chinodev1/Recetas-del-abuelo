@@ -147,6 +147,8 @@ body {
     0 14px 40px rgba(0,0,0,.55);
   filter: none;
   mix-blend-mode: normal;
+  transform-style: preserve-3d;
+  will-change: transform;
   opacity: 0;
 }
 
