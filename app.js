@@ -2791,7 +2791,7 @@ function initHeroAnimations() {
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  tl.fromTo('#hero-alfredo', { opacity: 0, rotateY: 90, transformPerspective: 700 }, { opacity: 1, rotateY: 0, transformPerspective: 700, duration: 1.05, ease: 'back.out(1.4)' }, .1)
+  tl.fromTo('#hero-alfredo', { opacity: 0, rotationY: 90, transformPerspective: 700 }, { opacity: 1, rotationY: 0, transformPerspective: 700, duration: 1.05, ease: 'back.out(1.4)' }, .1)
     .fromTo('#hero-h1',      { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .90 }, .42)
     .fromTo('#hero-sub',     { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .75 }, .66)
     .fromTo('#hero-stats',   { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .65 }, .80)
