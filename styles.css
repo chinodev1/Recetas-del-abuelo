@@ -770,11 +770,18 @@ body {
 }
 
 /* Print button */
-.modal-print-btn {
+.modal-actions-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.modal-print-btn,
+.modal-share-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 14px;
   background: rgba(255,255,255,.12);
   border: 1px solid rgba(255,255,255,.25);
   border-radius: 999px;
@@ -788,9 +795,35 @@ body {
   transition: all var(--t);
 }
 
-.modal-print-btn:hover {
+.modal-print-btn:hover,
+.modal-share-btn:hover {
   background: rgba(255,255,255,.22);
   color: #fff;
+}
+
+/* Share toast notification */
+.share-toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: .82rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+.share-toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Close button */

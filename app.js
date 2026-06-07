@@ -2377,6 +2377,8 @@ function abrirModal(id) {
   const r = [...RECETAS, ...CUSTOM].find(rec => rec.id === id);
   if (!r) return;
 
+  history.replaceState(null, '', `#${id}`);
+
   // Reset scaler state for this recipe
   modalReceta   = r;
   scalerBase    = extractPorcNum(r.porciones) || 1;
@@ -2414,10 +2416,16 @@ function abrirModal(id) {
       <span class="modal-chip">🍽 ${r.porciones}</span>
       <span class="modal-chip">${dIco} ${r.dificultad}</span>
     </div>
-    <button class="modal-print-btn" onclick="window.print()" aria-label="Imprimir receta">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
-      Imprimir receta
-    </button>
+    <div class="modal-actions-row">
+      <button class="modal-print-btn" onclick="window.print()" aria-label="Imprimir receta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+        Imprimir
+      </button>
+      <button class="modal-share-btn" onclick="compartirReceta('${r.id}','${r.titulo.replace(/'/g,"\\'")}','${(r.descripcion||'').replace(/'/g,"\\'").slice(0,80)}')" aria-label="Compartir receta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Compartir
+      </button>
+    </div>
   `;
 
   // Steps HTML
@@ -2535,6 +2543,30 @@ function abrirModal(id) {
 function cerrarModal() {
   overlayEl.classList.remove('open');
   document.body.style.overflow = '';
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+
+function compartirReceta(id, titulo, descripcion) {
+  const url = `${window.location.origin}${window.location.pathname}#${id}`;
+  if (navigator.share) {
+    navigator.share({ title: titulo, text: descripcion || `Mirá esta receta: ${titulo}`, url });
+  } else {
+    navigator.clipboard.writeText(url).then(() => mostrarToast('¡Link copiado!')).catch(() => mostrarToast('Copiá el link: ' + url));
+  }
+}
+
+function mostrarToast(msg) {
+  let toast = document.getElementById('share-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'share-toast';
+    toast.className = 'share-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('visible');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove('visible'), 2500);
 }
 
 /* ──────────────────────────────────────────────
@@ -2633,6 +2665,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroAnimations();
   initNavShadow();
   render();
+  const hash = window.location.hash.slice(1);
+  if (hash) setTimeout(() => abrirModal(hash), 400);
 });
 
 // Fallback if DOMContentLoaded already fired
@@ -2640,6 +2674,8 @@ if (document.readyState !== 'loading') {
   initHeroAnimations();
   initNavShadow();
   render();
+  const hash = window.location.hash.slice(1);
+  if (hash) setTimeout(() => abrirModal(hash), 400);
 }
 
 /* ══════════════════════════════════════════════
